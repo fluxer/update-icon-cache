@@ -76,7 +76,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = gtk-update-icon-cache$(EXEEXT)
+bin_PROGRAMS = update-icon-cache$(EXEEXT)
 subdir = src
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/depcomp
@@ -90,12 +90,12 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_gtk_update_icon_cache_OBJECTS =  \
-	gtk_update_icon_cache-updateiconcache.$(OBJEXT)
-gtk_update_icon_cache_OBJECTS = $(am_gtk_update_icon_cache_OBJECTS)
-gtk_update_icon_cache_LDADD = $(LDADD)
-gtk_update_icon_cache_LINK = $(CCLD) $(gtk_update_icon_cache_CFLAGS) \
-	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+am_update_icon_cache_OBJECTS =  \
+	update_icon_cache-updateiconcache.$(OBJEXT)
+update_icon_cache_OBJECTS = $(am_update_icon_cache_OBJECTS)
+update_icon_cache_LDADD = $(LDADD)
+update_icon_cache_LINK = $(CCLD) $(update_icon_cache_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -128,8 +128,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(gtk_update_icon_cache_SOURCES)
-DIST_SOURCES = $(gtk_update_icon_cache_SOURCES)
+SOURCES = $(update_icon_cache_SOURCES)
+DIST_SOURCES = $(update_icon_cache_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -249,8 +249,8 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-gtk_update_icon_cache_SOURCES = updateiconcache.c
-gtk_update_icon_cache_CFLAGS = $(GLIB_CFLAGS) $(GLIB_LIBS) $(GDK_CFLAGS) $(GDK_LIBS)
+update_icon_cache_SOURCES = updateiconcache.c
+update_icon_cache_CFLAGS = $(GLIB_CFLAGS) $(GLIB_LIBS) $(GDK_CFLAGS) $(GDK_LIBS)
 EXTRA_DIST = gtkiconcachevalidator.c gtkiconcachevalidator.h
 all: all-am
 
@@ -329,9 +329,9 @@ uninstall-binPROGRAMS:
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
 
-gtk-update-icon-cache$(EXEEXT): $(gtk_update_icon_cache_OBJECTS) $(gtk_update_icon_cache_DEPENDENCIES) $(EXTRA_gtk_update_icon_cache_DEPENDENCIES) 
-	@rm -f gtk-update-icon-cache$(EXEEXT)
-	$(AM_V_CCLD)$(gtk_update_icon_cache_LINK) $(gtk_update_icon_cache_OBJECTS) $(gtk_update_icon_cache_LDADD) $(LIBS)
+update-icon-cache$(EXEEXT): $(update_icon_cache_OBJECTS) $(update_icon_cache_DEPENDENCIES) $(EXTRA_update_icon_cache_DEPENDENCIES) 
+	@rm -f update-icon-cache$(EXEEXT)
+	$(AM_V_CCLD)$(update_icon_cache_LINK) $(update_icon_cache_OBJECTS) $(update_icon_cache_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -339,7 +339,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gtk_update_icon_cache-updateiconcache.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/update_icon_cache-updateiconcache.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -355,19 +355,19 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
-gtk_update_icon_cache-updateiconcache.o: updateiconcache.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gtk_update_icon_cache_CFLAGS) $(CFLAGS) -MT gtk_update_icon_cache-updateiconcache.o -MD -MP -MF $(DEPDIR)/gtk_update_icon_cache-updateiconcache.Tpo -c -o gtk_update_icon_cache-updateiconcache.o `test -f 'updateiconcache.c' || echo '$(srcdir)/'`updateiconcache.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gtk_update_icon_cache-updateiconcache.Tpo $(DEPDIR)/gtk_update_icon_cache-updateiconcache.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='updateiconcache.c' object='gtk_update_icon_cache-updateiconcache.o' libtool=no @AMDEPBACKSLASH@
+update_icon_cache-updateiconcache.o: updateiconcache.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(update_icon_cache_CFLAGS) $(CFLAGS) -MT update_icon_cache-updateiconcache.o -MD -MP -MF $(DEPDIR)/update_icon_cache-updateiconcache.Tpo -c -o update_icon_cache-updateiconcache.o `test -f 'updateiconcache.c' || echo '$(srcdir)/'`updateiconcache.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/update_icon_cache-updateiconcache.Tpo $(DEPDIR)/update_icon_cache-updateiconcache.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='updateiconcache.c' object='update_icon_cache-updateiconcache.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gtk_update_icon_cache_CFLAGS) $(CFLAGS) -c -o gtk_update_icon_cache-updateiconcache.o `test -f 'updateiconcache.c' || echo '$(srcdir)/'`updateiconcache.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(update_icon_cache_CFLAGS) $(CFLAGS) -c -o update_icon_cache-updateiconcache.o `test -f 'updateiconcache.c' || echo '$(srcdir)/'`updateiconcache.c
 
-gtk_update_icon_cache-updateiconcache.obj: updateiconcache.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gtk_update_icon_cache_CFLAGS) $(CFLAGS) -MT gtk_update_icon_cache-updateiconcache.obj -MD -MP -MF $(DEPDIR)/gtk_update_icon_cache-updateiconcache.Tpo -c -o gtk_update_icon_cache-updateiconcache.obj `if test -f 'updateiconcache.c'; then $(CYGPATH_W) 'updateiconcache.c'; else $(CYGPATH_W) '$(srcdir)/updateiconcache.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/gtk_update_icon_cache-updateiconcache.Tpo $(DEPDIR)/gtk_update_icon_cache-updateiconcache.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='updateiconcache.c' object='gtk_update_icon_cache-updateiconcache.obj' libtool=no @AMDEPBACKSLASH@
+update_icon_cache-updateiconcache.obj: updateiconcache.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(update_icon_cache_CFLAGS) $(CFLAGS) -MT update_icon_cache-updateiconcache.obj -MD -MP -MF $(DEPDIR)/update_icon_cache-updateiconcache.Tpo -c -o update_icon_cache-updateiconcache.obj `if test -f 'updateiconcache.c'; then $(CYGPATH_W) 'updateiconcache.c'; else $(CYGPATH_W) '$(srcdir)/updateiconcache.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/update_icon_cache-updateiconcache.Tpo $(DEPDIR)/update_icon_cache-updateiconcache.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='updateiconcache.c' object='update_icon_cache-updateiconcache.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(gtk_update_icon_cache_CFLAGS) $(CFLAGS) -c -o gtk_update_icon_cache-updateiconcache.obj `if test -f 'updateiconcache.c'; then $(CYGPATH_W) 'updateiconcache.c'; else $(CYGPATH_W) '$(srcdir)/updateiconcache.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(update_icon_cache_CFLAGS) $(CFLAGS) -c -o update_icon_cache-updateiconcache.obj `if test -f 'updateiconcache.c'; then $(CYGPATH_W) 'updateiconcache.c'; else $(CYGPATH_W) '$(srcdir)/updateiconcache.c'; fi`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
