@@ -586,6 +586,7 @@ PACKAGE_BUGREPORT='xakepa10@gmail.com'
 PACKAGE_URL=''
 
 ac_unique_file="src/updateiconcache.c"
+ac_default_prefix=/usr
 # Factoring default headers for most tests.
 ac_includes_default="\
 #include <stdio.h>
@@ -2781,6 +2782,8 @@ AMTAR='$${TAR-tar}'
 _am_tools='gnutar  pax cpio none'
 
 am__tar='$${TAR-tar} chof - "$$tardir"' am__untar='$${TAR-tar} xf -'
+
+
 
 
 

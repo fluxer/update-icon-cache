@@ -7,6 +7,8 @@ AC_CONFIG_SRCDIR([src/updateiconcache.c])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE
 
+AC_PREFIX_DEFAULT([/usr])
+
 # Checks for programs.
 AC_PROG_CC
 AM_PROG_CC_C_O
