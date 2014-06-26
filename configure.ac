@@ -13,8 +13,6 @@ AC_PREFIX_DEFAULT([/usr])
 AC_PROG_CC
 AM_PROG_CC_C_O
 
-# Checks for libraries.
-
 # Checks for header files.
 AC_CHECK_HEADERS([fcntl.h locale.h stdlib.h string.h unistd.h utime.h])
 
@@ -26,7 +24,7 @@ AC_TYPE_SIZE_T
 # Checks for library functions.
 AC_CHECK_FUNCS([setlocale strchr strrchr utime])
 
-# Check for needed libraries
+# Check for libraries.
 PKG_CHECK_MODULES(GLIB, [glib-2.0])
 AC_SUBST(GLIB_CFLAGS)
 AC_SUBST(GLIB_LIBS)
