@@ -576,7 +576,7 @@ uninstall-am: uninstall-binPROGRAMS
 
 
 install-exec-hook:
-	ln -s $(DESTDIR)$(bindir)/update-icon-cache $(DESTDIR)$(bindir)/gtk-update-icon-cache
+	ln -s update-icon-cache $(DESTDIR)$(bindir)/gtk-update-icon-cache
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
