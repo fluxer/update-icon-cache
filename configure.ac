@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([update-icon-cache],[2.24.25],[xakepa10@gmail.com])
+AC_INIT([update-icon-cache],[2.24.28],[xakepa10@gmail.com])
 AC_CONFIG_SRCDIR([src/updateiconcache.c])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE
