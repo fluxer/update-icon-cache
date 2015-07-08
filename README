@@ -1,0 +1,4 @@
+This is a standalone version of gtk-update-icon-cache extracted from the GTK+
+toolkit sources, the changes made to it simply remove the GTK+ dependency thus
+making it usable for projects that to not want to depend on the whole GTK+
+toolkit for the sake of having this tool, not at build nor at runtime.
